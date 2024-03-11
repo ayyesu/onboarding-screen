@@ -8,10 +8,19 @@ class Onboarding extends StatefulWidget {
 }
 
 class _OnboardingState extends State<Onboarding> {
+  final controller = PageController();
+  @override
+  void dispose() {
+    controller.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        controller: controller,
         children: [
           Container(
             color: const Color(0xFF96937A),
@@ -84,8 +93,11 @@ class _OnboardingState extends State<Onboarding> {
                           ),
                         
                         ),
+                      
                         ElevatedButton(
-                          onPressed: null,
+                          onPressed: () => {
+                            controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeInOut)
+                          },
                           style: ButtonStyle(
                             fixedSize: const MaterialStatePropertyAll(
                               Size(161.0, 46.0)
@@ -187,7 +199,9 @@ class _OnboardingState extends State<Onboarding> {
                         
                         ),
                         ElevatedButton(
-                          onPressed: null,
+                          onPressed: () => {
+                            controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeInOut)
+                          },
                           style: ButtonStyle(
                             fixedSize: const MaterialStatePropertyAll(
                               Size(161.0, 46.0)

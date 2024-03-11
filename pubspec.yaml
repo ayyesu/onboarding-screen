@@ -83,7 +83,8 @@ flutter:
     - family: Inter
       fonts:
         - asset: fonts/Inter-VariableFont_slnt,wght.ttf
-        
+  
+  
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
